@@ -7,11 +7,13 @@ const TaskForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault()
-    if (!editItem) {
+    if (title.trim()===''){
+      alert('Please write an action')
+      return
+     }
+    if (title.trim()!=='') { 
       addTask(title)
       setTitle('')
-    } else {
-      editTask(title, editItem.id)
     }
   }
 
